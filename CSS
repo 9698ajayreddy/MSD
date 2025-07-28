@@ -1,0 +1,226 @@
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f9f9f9;
+}
+header {
+  background: #343a40;
+  color: #fff;
+  padding: 1rem 0;
+  text-align: center;
+}
+nav {
+  background: #212529;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+nav a {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 0.8rem 1rem;
+  border-radius: 4px;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+}
+nav a.active,
+nav a:hover {
+  background: #ffc107;
+  color: #212529;
+}
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+  background: #fff;
+  box-shadow: 0 2px 10px #0001;
+  padding: 2rem;
+  border-radius: 8px;
+}
+section {
+  display: none;
+}
+section.active {
+  display: block;
+}
+ul {
+  padding-left: 1.2rem;
+}
+
+/* Home fills viewport with background image */
+.home-full-bg {
+  min-height: 90vh;
+  background: url('https://content.jdmagicbox.com/comp/eluru/l2/9999p8812.8812.211229200426.g4l2/catalogue/-sbw84avjvr.jpg') center center/cover no-repeat;
+  width : 100;
+  height : 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+.home-full-bg .home-content {
+  background: rgba(36, 30, 22, 0.55);
+  color: #fff;
+  padding: 2rem 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 24px #1119;
+  text-align: center;
+  width: 100%;
+  max-width: 390px;
+}
+.home-full-bg h2,
+.home-full-bg p {
+  color: #fff;
+}
+
+/* Menu grid styles */
+.food-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.food-card {
+  background: #fffdfa;
+  border-radius: 10px;
+  box-shadow: 0 2px 14px #aaa2;
+  overflow: hidden;
+  width: 200px;
+  transition: transform 0.13s;
+  text-align: center;
+  padding-bottom: 1rem;
+}
+.food-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  display: block;
+}
+.food-card h3 {
+  margin: 0.6rem 0 0.2rem;
+  font-size: 1.1rem;
+}
+.food-card p {
+  font-weight: bold;
+  color: #27ae60;
+  font-size: 1.03rem;
+}
+.food-card:hover {
+  transform: translateY(-6px) scale(1.04);
+  box-shadow: 0 8px 26px #ffc10744;
+}
+
+/* Gallery images */
+.gallery img {
+  width: 150px;
+  margin: 8px;
+  border-radius: 8px;
+  box-shadow: 0 0 6px #bbb;
+  cursor: pointer;
+}
+
+/* Modal for gallery */
+#galleryModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+#galleryModal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
+  box-shadow: 0 0 30px #000;
+}
+
+/* Forms */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 360px;
+}
+form input,
+form textarea {
+  padding: 0.55rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+button {
+  background: #28a745;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+button:hover {
+  background: #218838;
+}
+
+/* Blog posts */
+.blog-post {
+  margin-bottom: 2rem;
+}
+
+/* Testimonials */
+.testimonial {
+  background: #f7f4e9;
+  margin-bottom: 1.2rem;
+  padding: 1rem;
+  border-left: 4px solid #ffc107;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px #ffc10722;
+}
+.testimonial small {
+  color: #555;
+  display: block;
+  margin-top: 0.4rem;
+}
+
+/* Footer */
+footer {
+  background: #212529;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.95rem;
+}
+footer a {
+  color: #ffc107;
+  margin: 0 0.3rem;
+  text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 650px) {
+  main {
+    padding: 0.5rem;
+  }
+  nav {
+    gap: 0.3rem;
+  }
+  .home-full-bg .home-content {
+    padding: 1rem;
+    max-width: 96vw;
+  }
+  .home-full-bg {
+    min-height: 75vh;
+  }
+  .food-card {
+    width: 45vw;
+  }
+}
