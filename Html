@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gismuth restraunt</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Gismuth Restraunt</h1>
+    <p>Your Perfect Dining Experience</p>
+  </header>
+
+  <nav>
+    <a href="#" class="active" data-section="home">Home</a>
+    <a href="#" data-section="menu">Menu</a>
+    <a href="#" data-section="about">About Us</a>
+    <a href="#" data-section="gallery">Gallery</a>
+    <a href="#" data-section="reservation">Reservation</a>
+    <a href="#" data-section="blog">Blog</a>
+    <a href="#" data-section="events">Events</a>
+    <a href="#" data-section="testimonials">Testimonials</a>
+    <a href="#" data-section="contact">Contact Us</a>
+  </nav>
+
+  <main>
+    <section id="home" class="active home-full-bg">
+      <div class="home-content">
+        <h2>Welcome to Gismuth</h2>
+        <p>Discover exquisite flavors, warm hospitality, and a unique culinary journey.</p>
+        <form id="newsletterForm">
+          <h3>Subscribe to our Newsletter</h3>
+          <input type="email" id="newsletterEmail" placeholder="Your Email" required />
+          <button type="submit">Subscribe</button>
+          <small id="newsletterMsg"></small>
+        </form>
+      </div>
+    </section>
+
+    <section id="menu">
+      <h2>Our Menu</h2>
+      <div class="food-grid">
+        <div class="food-card" data-category="Veg Biryani">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMy6T0RldDupLiAH6S0NuKPfdUHJflmLoobA&s" alt="Margherita Pizza" />
+          <h3>Veg Biryani</h3>
+          <p>Rs.155</p>
+        </div>
+        <div class="food-card" data-category="Butter Naan">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgQhEGaNDLRYxHtkP58c1hix2MfvfrGqXncQ&s0" alt="Spaghetti Bolognese" />
+          <h3>Butter Naan</h3>
+          <p>Rs.180</p>
+        </div>
+        <div class="food-card" data-category="Arabian Mandi">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCRjJEKVO8bp3kv73O83EpiwjdfQQQMwi3lQ&s" alt="Caesar Salad" />
+          <h3>Arabian Mandi</h3>
+          <p>Rs.220</p>
+        </div>
+        <div class="food-card" data-category="Mutton Biryani">
+          <img src="https://i.ytimg.com/vi/fpTp0qgI_nA/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDtfV6omBQ7umMpWA9WM6_4R5aIjg" alt="Classic Burger" />
+          <h3>Mutton Biryani</h3>
+          <p>Rs.250</p>
+        </div>
+        <div class="food-card" data-category="Chicken Roti">
+          <img src="https://b.zmtcdn.com/data/pictures/7/19039737/54a2921f8a9d9973d6d8f95a2e3418bf_o2_featured_v2.jpg" alt="Chocolate Lava Cake" />
+          <h3>Chicken Roti</h3>
+          <p>Rs.199</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About Us</h2>
+      <p>
+        Family-owned restaurant serving our community since 2001. Freshly crafted dishes for unforgettable moments!
+      </p>
+    </section>
+
+    <section id="gallery" class="gallery">
+      <h2>Gallery</h2>
+      <div>
+        <img src="https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?auto=format&fit=crop&w=300&q=80" alt="Dish 1" onclick="openGalleryModal(this.src, this.alt)" />
+        <img src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=300&q=80" alt="Dish 2" onclick="openGalleryModal(this.src, this.alt)" />
+        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&w=300&q=80" alt="Dish 3" onclick="openGalleryModal(this.src, this.alt)" />
+        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=300&q=80" alt="Interior" onclick="openGalleryModal(this.src, this.alt)" />
+      </div>
+    </section>
+
+    <section id="reservation">
+      <h2>Reservation</h2>
+      <form id="reservationForm" onsubmit="return submitReservation(this)">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <input type="date" name="date" required />
+        <input type="time" name="time" required />
+        <input type="number" name="people" min="1" placeholder="Number of People" required />
+        <textarea name="requests" placeholder="Special Requests"></textarea>
+        <button type="submit">Book Table</button>
+        <div id="reservationSuccess"></div>
+      </form>
+    </section>
+
+    <section id="blog">
+      <h2>Our Blog</h2>
+      <div class="blog-post">
+        <h3>New Seasonal Menu Released</h3>
+        <p><small>June 27, 2025</small></p>
+        <p>Our chefs have crafted a new seasonal menu inspired by summer's freshest flavors.</p>
+      </div>
+      <div class="blog-post">
+        <h3>Chef's Table: Behind the Scenes</h3>
+        <p><small>May 15, 2025</small></p>
+        <p>Ever wondered how your favorite dishes are made? Read our exclusive interview with Chef Anna!</p>
+      </div>
+    </section>
+
+    <section id="events">
+      <h2>Upcoming Events</h2>
+      <ul>
+        <li><b>Wine Tasting Night:</b> July 15, 2025</li>
+        <li><b>Live Jazz Dinner:</b> August 1, 2025</li>
+        <li><b>Italian Cuisine Week:</b> August 22-28, 2025</li>
+      </ul>
+    </section>
+
+    <section id="testimonials">
+      <h2>Testimonials</h2>
+      <div class="testimonial">
+        <p>“Best dining experience I've ever had!”</p>
+        <small>- Priya S.</small>
+      </div>
+      <div class="testimonial">
+        <p>“Delicious food and such friendly staff. Highly recommend.”</p>
+        <small>- Rahul M.</small>
+      </div>
+      <div class="testimonial">
+        <p>“We love coming here! The desserts are heavenly.”</p>
+        <small>- Neha T.</small>
+      </div>
+      <button onclick="prevTestimonial()">Prev</button>
+      <button onclick="nextTestimonial()">Next</button>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <form id="contactForm" onsubmit="return submitContact(this)">
+        <input type="text" name="contactName" placeholder="Your Name" required />
+        <input type="email" name="contactEmail" placeholder="Your Email" required />
+        <textarea name="contactMessage" placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+        <div id="contactSuccess"></div>
+      </form>
+      <div class="map">
+        <iframe
+          src="https://maps.google.com/maps?q=India&t=&z=13&ie=UTF8&iwloc=&output=embed"
+          frameborder="0"
+          style="width:100%; height:200px; border-radius:8px; margin-top:1rem;"
+          allowfullscreen=""
+          loading="lazy"
+        ></iframe>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>
+      <strong>Follow us:</strong>
+      <a href="#">Instagram</a> |
+      <a href="#">Facebook</a> |
+      <a href="#">Twitter</a>
+    </div>
+    <div>
+      <strong>Opening Hours:</strong> Mon-Sun: 11am - 11pm
+    </div>
+    
+    <div>&copy; 2025 Gourmet Haven</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
